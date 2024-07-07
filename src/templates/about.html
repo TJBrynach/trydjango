@@ -3,20 +3,26 @@
 {% block content %}
     <h1>hello world</h1>
     <p>this is a template</p>
+    <h3>{{ title|capfirst }}</h3>
 
+    {{my_html|safe}}
 
     <p>
-        {{ my_number }}, {{ my_text }}, {{ my_list }}
+        {{ my_text }}, {{ my_text }}
+        {{ my_list }}
     </p>
-
 
     <ul>
         <li>Item 1</li>
         <li>Item 2</li>
     </ul>
     <ul>
-    {% for my_item in my_list %}
-        <li> {{ forloop.counter }} - {{ my_item }}</li>
+    {% for abc in my_list %}
+        {% if abc == 45 %}
+            <li> {{ forloop.counter }} - {{ abc|add:22 }}</li> 
+        {% else %}
+            <li> {{ forloop.counter }} - {{ abc }}</li> 
+        {% endif %}
     {% endfor %}
     </ul>
 
