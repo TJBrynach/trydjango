@@ -4,6 +4,7 @@
 {% block content %}
 <h1>{{ object.title|upper }}</h1>
 <p>{% if object.description == "sale time" %}{{ object.description }}{% else %}Description Coming Soon{% endif %}</p>
-
+<p>{{ object.description }}</p>
+<p>{{ object.price }}</p>
 <navbar>{{ object.price}}</navbar>
 {% endblock %}
