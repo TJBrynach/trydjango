@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 #https://docs.djangoproject.com/en/2.0/ref/models/fields/#field-types
 class Product(models.Model):
@@ -11,4 +11,4 @@ class Product(models.Model):
     
     
     def get_absolute_url(self):
-        return f"/products/{self.id}/"
+        return reverse("products:product_detail",kwargs={'id':self.id})
